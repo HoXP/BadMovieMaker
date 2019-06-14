@@ -1,0 +1,86 @@
+{
+  "stage_size": {
+    "Width": 1280.0,
+    "Height": 720.0
+  },
+  "actors": [
+    {
+      "id": 1,
+      "actor_type": "ImageActor",
+      "actor_name": "img1",
+      "url": "Resources/Textures/17zuoye.png",
+      "animations": {
+        "translateList": [
+          {
+            "time": 1000,
+            "end_pos": {
+              "X": 0.0,
+              "Y": 0.0
+            }
+          },
+          {
+            "time": 2000,
+            "end_pos": {
+              "X": 300.0,
+              "Y": 300.0
+            }
+          }
+        ],
+        "rotationList": [
+          {
+            "time": 1000,
+            "end_angle": 0.0
+          },
+          {
+            "time": 2000,
+            "end_angle": 720.0
+          }
+        ],
+        "scaleList": [
+          {
+            "time": 1000,
+            "end_scale": {
+              "X": 1.0,
+              "Y": 1.0
+            }
+          },
+          {
+            "time": 2000,
+            "end_scale": {
+              "X": 2,
+              "Y": 2
+            }
+          }
+        ],
+        "opacityList": [
+          {
+            "time": 1000,
+            "end_opacity": 1
+          },
+          {
+            "time": 2000,
+            "end_opacity": 0.2
+          }
+        ]
+      },
+      "init_data": {
+        "color": "FFFFFFFF",
+        "pos": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "angle": 0.0,
+        "scale": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "opacity": 1.0,
+        "size": {
+          "Width": 100.0,
+          "Height": 100.0
+        },
+        "index": 0
+      }
+    }
+  ]
+}

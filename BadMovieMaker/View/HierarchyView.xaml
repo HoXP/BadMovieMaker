@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="BadMovieMaker.View.HierarchyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:localControl="clr-namespace:BadMovieMaker.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200">
+    <Grid>
+        <ListBox x:Name="lstHierarchy" Grid.Row="1" Grid.Column="0" AllowDrop="True"
+                 SelectionChanged="lstHierarchy_SelectionChanged" PreviewMouseMove="lstHierarchy_PreviewMouseMove" Drop="lstHierarchy_Drop">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Create">
+                        <MenuItem Header="_Rect" Click="Rect_Click"/>
+                        <MenuItem Header="_Ellipse" Click="Ellipse_Click"/>
+                        <MenuItem Header="_Image" Click="Image_Click"/>
+                        <MenuItem Header="_Media" Click="Media_Click"/>
+                        <MenuItem Header="_Font" Click="Font_Click"/>
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Name="grd" Grid.Row="1" Grid.Column="0" Height="24">
+                        <localControl:EditableTextBlock x:Name="edtActor"/>
+                        <Grid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Uid="{Binding Id}" Header="_Rename" Click="Rename_Click"/>
+                                <MenuItem Uid="{Binding Id}" Header="_Delete" Click="Delete_Click"/>
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

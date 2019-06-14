@@ -1,0 +1,24 @@
+﻿<c:UCComponent x:Class="BadMovieMaker.Components.SizeComponent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:c="clr-namespace:BadMovieMaker.Components"
+    mc:Ignorable="d">
+    <Grid MinWidth="200">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="尺寸:" VerticalAlignment="Center"/>
+            <TextBlock Text="W:" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding Width, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2"/>
+            <TextBlock Text="H:" Grid.Column="3" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Grid.Column="4"/>
+        </Grid>
+    </Grid>
+</c:UCComponent>

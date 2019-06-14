@@ -1,0 +1,12 @@
+﻿<components:UCComponent x:Class="BadMovieMaker.Components.TransparencyComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:components="clr-namespace:BadMovieMaker.Components"
+             mc:Ignorable="d" Background="AliceBlue" MinHeight="30">
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="透明度:" TextAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Opacity, UpdateSourceTrigger=PropertyChanged}" MinWidth="60" VerticalAlignment="Center"/>
+    </StackPanel>
+</components:UCComponent>

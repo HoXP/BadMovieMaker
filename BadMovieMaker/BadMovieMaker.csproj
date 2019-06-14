@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B7EF19D-67BE-4F1C-863B-14C053D09A28}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BadMovieMaker</RootNamespace>
+    <AssemblyName>BadMovieMaker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\JsonUtils.cs" />
+    <Compile Include="Common\NumberText.cs" />
+    <Compile Include="Components\ComponentsTrunk.cs" />
+    <Compile Include="Common\ControlUtils.cs" />
+    <Compile Include="Common\Converter\BoolVisibilityConverter.cs" />
+    <Compile Include="Components\FontComponent.xaml.cs">
+      <DependentUpon>FontComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ObjectComponent.xaml.cs">
+      <DependentUpon>ObjectComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ImageComponent.xaml.cs">
+      <DependentUpon>ImageComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TransformComponent.xaml.cs">
+      <DependentUpon>TransformComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TransparencyComponent.xaml.cs">
+      <DependentUpon>TransparencyComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MediaComponent.xaml.cs">
+      <DependentUpon>MediaComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Actor.cs" />
+    <Compile Include="Components\UCComponent.cs" />
+    <Compile Include="Controls\FontActor.xaml.cs">
+      <DependentUpon>FontActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UIActorControlPoint.xaml.cs">
+      <DependentUpon>UIActorControlPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimationListItem.xaml.cs">
+      <DependentUpon>AnimationListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EllipseActor.xaml.cs">
+      <DependentUpon>EllipseActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageActor.xaml.cs">
+      <DependentUpon>ImageActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RectActor.xaml.cs">
+      <DependentUpon>RectActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimelineItem.xaml.cs">
+      <DependentUpon>TimelineItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimelineRulerControl.cs" />
+    <Compile Include="Controls\MediaActor.xaml.cs">
+      <DependentUpon>MediaActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Define\JsonClasses.cs" />
+    <Compile Include="Define\PathDefine.cs" />
+    <Compile Include="Mgr\ActorControlPointMgr.cs" />
+    <Compile Include="Mgr\InspectorMgr.cs" />
+    <Compile Include="Mgr\MainWindowMgr.cs" />
+    <Compile Include="Mgr\ModelMgr.cs" />
+    <Compile Include="Mgr\ResourcesMgr.cs" />
+    <Compile Include="Mgr\ScreenCaptureMgr.cs" />
+    <Compile Include="Model\AnimationModel.cs" />
+    <Compile Include="Model\TimelineAnimationModel.cs" />
+    <Compile Include="Model\TimelineItemModel.cs" />
+    <Compile Include="Model\TimelineModel.cs" />
+    <Compile Include="View\Inspector\ObjectInfo.xaml.cs">
+      <DependentUpon>ObjectInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SizeComponent.xaml.cs">
+      <DependentUpon>SizeComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StageSizeComponent.xaml.cs">
+      <DependentUpon>StageSizeComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InspectorView.xaml.cs">
+      <DependentUpon>InspectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mgr\ModelsHolder.cs" />
+    <Compile Include="Model\AnimationSegmentModel.cs" />
+    <Compile Include="Model\TimelineTreeItemModel.cs" />
+    <Compile Include="Utils\AppHelper.cs" />
+    <Compile Include="View\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResourcesView.xaml.cs">
+      <DependentUpon>ResourcesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelectResWindow.xaml.cs">
+      <DependentUpon>SelectResWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AnimationSelectWindow.xaml.cs">
+      <DependentUpon>AnimationSelectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TimelineView.xaml.cs">
+      <DependentUpon>TimelineView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Components\FontComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ObjectComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ImageComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\TransformComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\TransparencyComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\MediaComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FontActor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UIActorControlPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AnimationListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EditableTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EllipseActor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ImageActor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RectActor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TimelineItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MediaActor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HierarchyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Inspector\ObjectInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\SizeComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\StageSizeComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InspectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ResourcesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelectResWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AnimationSelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ScaleRuler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\SingletonBase.cs" />
+    <Compile Include="View\HierarchyView.xaml.cs">
+      <DependentUpon>HierarchyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StageView.xaml.cs">
+      <DependentUpon>StageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScaleRuler.xaml.cs">
+      <DependentUpon>ScaleRuler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\TimelineView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mgr\StageMgr.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Data\test.json" />
+    <None Include="Data\test2.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Design\" />
+    <Folder Include="View\Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Textures\17zuoye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\folder.png" />
+    <Resource Include="Res\image.png" />
+    <Resource Include="Res\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Textures\t.jpg" />
+    <Resource Include="Resources\Textures\q.jpg" />
+    <Resource Include="Resources\Textures\w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Textures\故宫说\第八课\2.jpg" />
+    <Resource Include="Resources\Textures\故宫说\第八课\3.jpg" />
+    <Resource Include="Resources\Textures\故宫说\第八课\四种语言.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Textures\故宫说\第八课\烟雾\烟.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Audios\从前的我.mp3" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\1.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\图层 19.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\土.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\木.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\水.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\火.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\五行\金.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\白底.png" />
+    <Resource Include="Resources\Textures\故宫说\第八课\鞭春牛.png" />
+    <Content Include="Resources\Videos\v.mp4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

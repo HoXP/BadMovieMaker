@@ -1,0 +1,9 @@
+﻿<c:Actor x:Class="BadMovieMaker.Controls.MediaActor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:BadMovieMaker.Controls"
+             mc:Ignorable="d" Background="AliceBlue" >
+    <MediaElement Source="{Binding Media.Source}" LoadedBehavior="Play" Volume="1"/>
+</c:Actor>

@@ -1,0 +1,19 @@
+﻿<c:UCComponent x:Class="BadMovieMaker.Components.MediaComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:BadMovieMaker.Components"
+             mc:Ignorable="d" AllowDrop="True"
+               Drop="mda_Drop">
+    <Grid Height="120">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <TextBox Text="{Binding Media.Source, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        <Border Background="Black" Grid.Row="1">
+            <MediaElement x:Name="mda" Source="{Binding Media.Source}" Volume="0"/>
+        </Border>
+    </Grid>
+</c:UCComponent>

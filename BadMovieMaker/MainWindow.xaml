@@ -1,0 +1,60 @@
+﻿<Window x:Class="BadMovieMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:BadMovieMaker.View"
+        mc:Ignorable="d"
+        Title="没想好叫啥名" Height="720" Width="1280" WindowStartupLocation="CenterScreen" AllowDrop="True"
+        Drop="Window_Drop" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="menuBar" Height="30"/>
+            <RowDefinition Name="toolBar" Height="20"/>
+            <RowDefinition Height="{Binding Path=GridPercents[0]}"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="{Binding Path=GridPercents[1]}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Path=GridPercents[2]}"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="{Binding Path=GridPercents[3]}"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="{Binding Path=GridPercents[4]}"/>
+        </Grid.ColumnDefinitions>
+
+        <view:MenuView Background="White" Grid.Row="0" Grid.ColumnSpan="5"/>
+        
+        <Border Background="AliceBlue" Grid.Row="1" Grid.ColumnSpan="5">
+            <TextBlock Text="工具栏" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+
+        <!--<Border Background="Purple" Grid.Row="2" Grid.RowSpan="3" Grid.Column="0">
+            <TextBlock Text="资源窗口" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        </Border>-->
+        <view:ResourcesView Grid.Row="2" Grid.RowSpan="3" Grid.Column="0"></view:ResourcesView>
+
+        <GridSplitter  Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" HorizontalAlignment="Stretch"/>
+        
+        <view:InspectorView Grid.Row="2" Grid.Column="4" HorizontalAlignment="Stretch"/>
+
+        <GridSplitter Grid.Column="3" Grid.Row="2" Grid.RowSpan="3" HorizontalAlignment="Stretch"/>
+
+        <Border Background="Gray" Grid.Row="2" Grid.Column="2" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3" />
+                    <ColumnDefinition Width="7*" />
+                </Grid.ColumnDefinitions>
+                <view:HierarchyView/>
+                <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+                <view:StageView Grid.Column="2"/>
+            </Grid>
+        </Border>
+        
+        <GridSplitter Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch"/>
+        
+        <view:TimelineView Background="Black" Grid.Row="4" Grid.Column="2" />
+    </Grid>
+</Window>

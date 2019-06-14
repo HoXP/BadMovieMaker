@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="BadMovieMaker.View.Inspector.TransFormInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BadMovieMaker.View.Inspector"
+             xmlns:Common="clr-namespace:BadMovieMaker.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300" Background="Wheat">
+    <Grid>
+        <WrapPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch">
+                <TextBlock Text="位置:" Margin="5" TextAlignment="Center"/>
+                <TextBlock Text="X" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name="Position_X" Text="{Binding Path = PositionX}" MinWidth="50" Height="20" HorizontalAlignment="Stretch"/>
+                <!--<Common:NumberText x:Name="Position_X" MinWidth="50" Height="20" HorizontalAlignment="Stretch" />-->
+                <TextBlock Text="Y" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name ="Position_Y" Text="{Binding Path = PositionY}" MinWidth="50" Height="20"/>
+                <Button Click="Button_Click"/>
+                <TextBlock Text="Z" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Text="123" MinWidth="50" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                <TextBlock Text="旋转:" Margin="5" TextAlignment="Center"/>
+                <TextBlock Text="X" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name ="Rotation_X" Text="{Binding Path = RotationX}" MinWidth="50" Height="20"/>
+                <TextBlock Text="Y" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name ="Rotation_Y" Text="{Binding Path = RotationY}" MinWidth="50"  Height="20"/>
+                <TextBlock Text="Z" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Text="123" MinWidth="50"  Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <TextBlock Text="缩放:" Margin="5" TextAlignment="Center"/>
+                <TextBlock Text="X" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name ="Scale_X"  Text="{Binding Path = ScaleX}" MinWidth="50"  Height="20"/>
+                <TextBlock Text="Y" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Name ="Scale_Y" Text="{Binding Path = ScaleY}" MinWidth="50"  Height="20"/>
+                <TextBlock Text="Z" Margin="2" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Text="123" MinWidth="50"  Height="20"/>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</UserControl>

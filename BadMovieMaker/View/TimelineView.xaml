@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="BadMovieMaker.View.TimelineView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BadMovieMaker.View"
+             xmlns:controls="clr-namespace:BadMovieMaker.Controls"
+             xmlns:BMM ="clr-namespace:BadMovieMaker.BMMControls"
+			 xmlns:sys ="clr-namespace:System;assembly=mscorlib"
+			 xmlns:models="clr-namespace:BadMovieMaker.Model"
+             mc:Ignorable="d" 
+			 Loaded="OnTimelineViewLoaded"
+             d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<HierarchicalDataTemplate x:Key="treeRootDataTpl">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="{Binding Path=OwnerActor.Name}" VerticalAlignment="Center" Width="100"/>
+				<Button Content="锁定" Margin="5,4,5,4"/>
+				<Button Content="Add" Click="Button_Click" Margin="0,4,0,4"/>
+			</StackPanel>
+			<HierarchicalDataTemplate.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding AnimationType}" Width="250"/>
+				</DataTemplate>
+			</HierarchicalDataTemplate.ItemTemplate>
+		</HierarchicalDataTemplate>
+
+		<Style TargetType="ScrollBar">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ScrollBar">
+						<Grid Name="Bg"
+              Background="{TemplateBinding Background}"
+              SnapsToDevicePixels="true">
+							<Track Name="PART_Track" 
+                 ViewportSize="NaN"
+                 IsDirectionReversed="False"
+                 Grid.Column="0"
+                 Grid.ZIndex="-1">
+								<Track.Thumb>
+									<Thumb Height="30" Width="50" Foreground="Red" Background="Gray"/>
+								</Track.Thumb>
+							</Track>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger SourceName="PART_Track" Property="IsEnabled" Value="false">
+								<Setter TargetName="PART_Track" Property="Visibility" Value="Hidden"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<DataTemplate x:Key="keyframeDataTpl" DataType="{x:Type models:TimelineItemModel}">
+			<controls:TimelineItem/>
+		</DataTemplate>
+
+		<DataTemplate x:Key="animDataTpl" DataType="{x:Type models:TimelineAnimationModel}">
+			<ItemsControl  ItemTemplate="{StaticResource keyframeDataTpl}" >
+				<ItemsPanelTemplate>
+					<StackPanel HorizontalAlignment="Left" Orientation="Horizontal"/>
+				</ItemsPanelTemplate>
+			</ItemsControl>
+		</DataTemplate>
+	</UserControl.Resources>
+
+	<Grid Background="Gray">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="25"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="20"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition Width="1"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="20"/>
+		</Grid.ColumnDefinitions>
+
+		<Border BorderBrush="White" Background="Gray" BorderThickness="0"  Grid.ColumnSpan="4">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0">
+				<TextBlock Text="当前时间: " Foreground="Black" FontWeight="DemiBold"/>
+				<TextBlock x:Name="curTimeText" Text="00:00.000" Foreground="Black" FontWeight="DemiBold"/>
+			</StackPanel>
+		</Border>
+
+		<GridSplitter Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Stretch" />
+
+		<ScrollBar Margin="0,5,0,0" Orientation="Vertical" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2"/>
+
+		<ScrollViewer x:Name="sv_timeRuler" ScrollChanged="Sv_timeRuler_ScrollChanged" MouseMove="Sv_timeRuler_MouseMove" MouseLeave="Sv_timeRuler_MouseLeave"
+			Grid.Column="2" Grid.Row="1" Grid.RowSpan=" 2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"
+		>
+			<Grid >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="25"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Border Name="timelineRulerBorder" Background="Gray" BorderBrush="White" Width="10000" BorderThickness="0,1,1,1" 
+						MouseDown="TimelineRulerControl_MouseDown">
+					<BMM:TimelineRulerControl x:Name="timelineRuler" ScaleLabelBrush="White" FontSize="11" LargeScaleSize="1.5,10" LargeScaleBrush="#FF3F3FF3" LargeScaleSteps="FiveStep" ScaleStepLength="Px20" SmallScaleSize="1,8" ZeroScaleOffset="8" />
+				</Border>
+
+				<ScrollViewer x:Name="sv_timelineCanvas"  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Grid.Row="1"
+				>
+					<Border  Width="{Binding ElementName=timelineRulerBorder, Path=Width}">
+						<Canvas x:Name="canvasTimeline" ClipToBounds="True" >
+						</Canvas>
+					</Border>
+				</ScrollViewer>
+
+				<ScrollViewer x:Name="sv_timelineItem" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+					<!--<controls:TimelineItem Width="16" Height="16"/>-->
+					<ItemsControl x:Name="itemsControl" ItemTemplate="{StaticResource animDataTpl}">
+						
+					</ItemsControl>
+				</ScrollViewer>
+			</Grid>
+		</ScrollViewer>
+
+		<ScrollViewer IsHitTestVisible="False" x:Name="sv_canvas" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="2" 
+			VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden">
+			<Canvas x:Name="cavasTop" ClipToBounds="true"
+				Width="{Binding ElementName=timelineRulerBorder, Path=Width}" >
+				<Path x:Name="selectedTimeLine" Width="15" Stretch="Fill" Stroke="Green" Fill="Green" StrokeThickness="2"  Canvas.Left="0" Canvas.Top="15">
+					<Path.Data>
+						<GeometryGroup>
+							<PathGeometry Figures="M 0,0,10,0,5,6 Z "/>
+							<LineGeometry StartPoint="5,6" EndPoint="10,1000"/>
+						</GeometryGroup>
+					</Path.Data>
+				</Path>
+			</Canvas>
+		</ScrollViewer>
+
+		<Border BorderBrush="White" BorderThickness="0" Grid.Column="2" Grid.Row="2">
+			<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="动画帧视图" TextWrapping="Wrap"  Foreground="Aquamarine"/>-->
+		</Border>
+
+		<Border BorderBrush="White" BorderThickness="1,1,0,1" Grid.Column="0" Grid.Row="1" >
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="对象动画列表控制栏" TextWrapping="Wrap"  Foreground="Aquamarine"/>
+		</Border>
+
+		<Border BorderBrush="White" BorderThickness="1" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2">
+			<!--<ScrollBar Orientation="Horizontal" Width ="4in" Minimum="1" Maximum="100" />-->
+			<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="时间轴底部控制栏" Foreground="Aquamarine"/>-->
+			<ScrollBar x:Name="timeRulerSB" Orientation="Horizontal" SizeChanged="UserControl_SizeChanged"  ScrollBar.Scroll="TimeRulerSB_Scroll" ValueChanged="TimeRulerSB_ValueChanged"/>
+		</Border>
+	</Grid>
+</UserControl>

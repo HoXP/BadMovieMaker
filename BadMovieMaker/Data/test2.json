@@ -1,0 +1,699 @@
+{
+    "stage_size": {
+      "Width": 1280,
+      "Height": 720
+    },
+    "actors": [
+      {
+        "id": 1,
+        "actor_type": "ImageActor",
+        "actor_name": "BG",
+        "url": "Resources/Textures/故宫说/第八课/2.jpg",
+        "animations": {
+          "scaleList": [
+            {
+              "time": 3000,
+              "end_scale": {
+                "X": 1.2,
+                "Y": 1.2
+              }
+            }
+          ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 0,
+            "Y": 0
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 1,
+          "size": {
+            "Width": 1280,
+            "Height": 720
+          },
+          "index": 0
+        }
+      },
+      {
+        "id": 2,
+        "actor_type": "ImageActor",
+        "actor_name": "lg",
+        "url": "Resources/Textures/故宫说/第八课/四种语言.png",
+        "animations": {
+            "rotationList": [
+                {
+                  "time": 3500,
+                  "end_angle": 0
+                },
+                {
+                  "time": 4500,
+                  "end_angle": 720
+                }
+              ],
+          "scaleList": [
+            {
+                "time": 3500,
+                "end_scale": {
+                  "X": 0,
+                  "Y": 0
+                }
+            },
+            {
+              "time": 4500,
+              "end_scale": {
+                "X": 0.5,
+                "Y": 0.5
+              }
+            }
+          ],
+          "opacityList": [
+            {
+                "time": 3500,
+                "end_opacity": 0
+            },
+            {
+              "time": 4500,
+              "end_opacity": 1
+            },
+            {
+                "time": 6000,
+                "end_opacity": 1
+              },
+            {
+                "time": 8000,
+                "end_opacity": 0
+              }
+            ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": -50,
+            "Y": -70
+          },
+          "angle": 0,
+          "scale": {
+            "X": 0,
+            "Y": 0
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 389,
+            "Height": 675
+          },
+          "index": 1
+        }
+      },
+
+      {
+        "id": 3,
+        "actor_type": "ImageActor",
+        "actor_name": "smoking",
+        "url": "Resources/Textures/故宫说/第八课/烟雾/烟.png",
+        "animations": {
+            "scaleList": [
+                {
+                    "time": 9000,
+                    "end_scale": {
+                      "X": 0.8,
+                      "Y": 0.8
+                    }
+                  },
+                {
+                  "time": 9700,
+                  "end_scale": {
+                    "X": 1.5,
+                    "Y": 1.5
+                  }
+                },
+                {
+                    "time": 20000,
+                    "end_scale": {
+                      "X": 1.5,
+                      "Y": 1.5
+                    }
+                  },
+                  {
+                      "time": 21700,
+                      "end_scale": {
+                        "X": 0.8,
+                        "Y": 0.8
+                      }
+                    }
+              ],
+              "translateList": [
+                {
+                    "time": 9000,
+                    "end_pos": {
+                        "X": -108,
+                        "Y": 10
+                    }
+                  },
+                {
+                  "time": 9700,
+                  "end_pos": {
+                    "X": 24.0,
+                    "Y": -226.0
+                  }
+                },
+                {
+                  "time": 20000,
+                  "end_pos": {
+                    "X": 24.0,
+                    "Y": -226.0
+                  }
+                },
+                {
+                  "time": 21700,
+                  "end_pos": {
+                    "X": -108,
+                    "Y": 10
+                  }
+                }
+              ],
+              "opacityList": [
+                {
+                    "time": 9000,
+                    "end_opacity": 0
+                },
+                {
+                  "time": 9000,
+                  "end_opacity": 1
+                },
+                {
+                    "time": 9700,
+                    "end_opacity": 0.3
+                  },
+                  {
+                      "time": 20000,
+                      "end_opacity": 0.3
+                    },
+                    {
+                        "time": 21700,
+                        "end_opacity": 1
+                      },
+                      {
+                        "time": 22700,
+                        "end_opacity": 0
+                      }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": -108,
+            "Y": 10
+          },
+          "angle": 0,
+          "scale": {
+            "X": 0.8,
+            "Y": 0.8
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 1334,
+            "Height": 544
+          },
+          "index": 1
+        }
+      },
+
+      {
+        "id": 4,
+        "actor_type": "ImageActor",
+        "actor_name": "cow",
+        "url": "Resources/Textures/故宫说/第八课/3.jpg",
+        "animations": {
+              "opacityList": [
+                {
+                    "time": 9700,
+                    "end_opacity": 0
+                },
+                {
+                    "time": 10500,
+                    "end_opacity": 0.7
+                },
+                {
+                  "time": 15000,
+                  "end_opacity": 1
+                },
+                {
+                  "time": 18000,
+                  "end_opacity": 1
+                },
+                {
+                  "time": 20000,
+                  "end_opacity": 0
+                }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 0,
+            "Y": 0
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 1280,
+            "Height": 720
+          },
+          "index": 2
+        }
+      },
+
+      {
+        "id": 5,
+        "actor_type": "ImageActor",
+        "actor_name": "label1",
+        "url": "Resources/Textures/故宫说/第八课/鞭春牛.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 15000,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 15000,
+                    "end_opacity": 1
+                  },
+                  {
+                    "time": 18000,
+                    "end_opacity": 1
+                  },
+                  {
+                    "time": 20000,
+                    "end_opacity": 0
+                  }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 1103,
+            "Y": 34
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 88,
+            "Height": 329
+          },
+          "index": 3
+        }
+      },
+
+      {
+        "id": 6,
+        "actor_type": "ImageActor",
+        "actor_name": "label1_mask",
+        "url": "Resources/Textures/故宫说/第八课/白底.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 15000,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 15000,
+                    "end_opacity": 1
+                  },
+                  {
+                    "time": 18000,
+                    "end_opacity": 1
+                  },
+                  {
+                    "time": 18000,
+                    "end_opacity": 0
+                  }
+                ],
+                "translateList": [
+                    {
+                      "time": 15000,
+                      "end_pos": {
+                        "X": 1103,
+                        "Y": 34
+                      }
+                    },
+                    {
+                      "time": 16000,
+                      "end_pos": {
+                        "X": 1195,
+                        "Y": 34
+                      }
+                    }
+                  ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 1103,
+            "Y": 34
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 92,
+            "Height": 329
+          },
+          "index": 3
+        }
+      },
+      {
+        "id": 7,
+        "actor_type": "ImageActor",
+        "actor_name": "wuxingdi1",
+        "url": "Resources/Textures/故宫说/第八课/五行/1.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 22700,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 23000,
+                    "end_opacity": 1
+                  }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 74,
+            "Y": 53
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 294,
+            "Height": 277
+          },
+          "index": 4
+        }
+      },
+
+      {
+        "id": 8,
+        "actor_type": "ImageActor",
+        "actor_name": "wuxingdi2",
+        "url": "Resources/Textures/故宫说/第八课/五行/图层 19.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 22700,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 23000,
+                    "end_opacity": 1
+                  }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 48,
+            "Y": 76
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 294,
+            "Height": 277
+          },
+          "index": 5
+        }
+      },
+
+      {
+        "id": 9,
+        "actor_type": "ImageActor",
+        "actor_name": "jin",
+        "url": "Resources/Textures/故宫说/第八课/五行/金.png",
+        "animations": {
+              "opacityList": [
+                {
+                    "time": 25000,
+                    "end_opacity": 0
+                  },
+                  {
+                      "time": 26000,
+                      "end_opacity": 1
+                    }
+                ],
+                "scaleList": [
+                    {
+                      "time": 26000,
+                      "end_scale": {
+                        "X": 1.0,
+                        "Y": 1.0
+                      }
+                    },
+                    {
+                      "time": 26500,
+                      "end_scale": {
+                        "X": 1.1,
+                        "Y": 1.1
+                      }
+                    },
+                    {
+                      "time": 27000,
+                      "end_scale": {
+                        "X": 1.0,
+                        "Y": 1.0
+                      }
+                    },
+                    {
+                      "time": 27500,
+                      "end_scale": {
+                        "X": 1.1,
+                        "Y": 1.1
+                      }
+                    },
+                    {
+                      "time": 28000,
+                      "end_scale": {
+                        "X": 1.0,
+                        "Y": 1.0
+                      }
+                    }
+                  ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 52,
+            "Y": 312
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 70,
+            "Height": 65
+          },
+          "index": 6
+        }
+      },
+
+      {
+        "id": 10,
+        "actor_type": "ImageActor",
+        "actor_name": "shui",
+        "url": "Resources/Textures/故宫说/第八课/五行/水.png",
+        "animations": {
+              "opacityList": [
+                {
+                    "time": 25000,
+                    "end_opacity": 0
+                  },
+                  {
+                      "time": 26000,
+                      "end_opacity": 1
+                    }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 18,
+            "Y": 118
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 70,
+            "Height": 65
+          },
+          "index": 7
+        }
+      },
+
+      {
+        "id": 11,
+        "actor_type": "ImageActor",
+        "actor_name": "mu",
+        "url": "Resources/Textures/故宫说/第八课/五行/木.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 22700,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 23000,
+                    "end_opacity": 1
+                  }
+                ],
+                "scaleList": [
+                    {
+                      "time": 23000,
+                      "end_scale": {
+                        "X": 1.0,
+                        "Y": 1.0
+                      }
+                    },
+                    {
+                        "time": 24000,
+                        "end_scale": {
+                          "X": 1.1,
+                          "Y": 1.1
+                        }
+                      },
+                      {
+                        "time": 25000,
+                        "end_scale": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        }
+                      }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 172,
+            "Y": 9
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 70,
+            "Height": 65
+          },
+          "index": 8
+        }
+      },
+
+      {
+        "id": 12,
+        "actor_type": "ImageActor",
+        "actor_name": "huo",
+        "url": "Resources/Textures/故宫说/第八课/五行/火.png",
+        "animations": {
+              "opacityList": [
+                {
+                  "time": 25000,
+                  "end_opacity": 0
+                },
+                {
+                    "time": 26000,
+                    "end_opacity": 1
+                  }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 331,
+            "Y": 134
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 70,
+            "Height": 65
+          },
+          "index": 9
+        }
+      },
+
+      {
+        "id": 13,
+        "actor_type": "ImageActor",
+        "actor_name": "tu",
+        "url": "Resources/Textures/故宫说/第八课/五行/土.png",
+        "animations": {
+              "opacityList": [
+                {
+                    "time": 25000,
+                    "end_opacity": 0
+                  },
+                  {
+                      "time": 26000,
+                      "end_opacity": 1
+                    }
+                ]
+        },
+        "init_data": {
+          "color": "FFFFFFFF",
+          "pos": {
+            "X": 266,
+            "Y": 321
+          },
+          "angle": 0,
+          "scale": {
+            "X": 1,
+            "Y": 1
+          },
+          "opacity": 0,
+          "size": {
+            "Width": 70,
+            "Height": 65
+          },
+          "index": 10
+        }
+      }
+    ]
+  }

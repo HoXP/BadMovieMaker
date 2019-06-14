@@ -1,0 +1,9 @@
+BadMovieMaker/bin
+BadMovieMaker/obj
+.vs/
+/.vs/BadMovieMaker/v15/.suo
+/.vs/BadMovieMaker/v15/Server/sqlite3/db.lock
+/.vs/BadMovieMaker/v15/Server/sqlite3/storage.ide
+/.vs/BadMovieMaker/v15/Server/sqlite3/storage.ide-shm
+/.vs/BadMovieMaker/v15/Server/sqlite3/storage.ide-wal
+/BadMovieMaker/BadMovieMaker.csproj.user

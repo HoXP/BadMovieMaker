@@ -1,0 +1,50 @@
+﻿<components:ComponentsTrunk
+    x:Class="BadMovieMaker.View.StageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:components="clr-namespace:BadMovieMaker.Components"
+    mc:Ignorable="d"
+    Loaded="UserControl_Loaded" MouseMove="UserControl_MouseMove" MouseDown="UserControl_MouseDown" MouseUp="UserControl_MouseUp" KeyDown="UserControl_KeyDown">
+    <!--<UserControl.Width>640</UserControl.Width>
+    <UserControl.Height>360</UserControl.Height>-->
+    <components:ComponentsTrunk.Resources>
+        <Brush x:Key="clrWild">Transparent</Brush>
+    </components:ComponentsTrunk.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="AntiqueWhite">
+            <TextBox x:Name="txbSizeTime" Text="{Binding Path=StageSizeTime, StringFormat={}{0:P1}}" TextChanged="txbSizeTime_TextChanged"/>
+            <TextBlock Text="{Binding MousePos, StringFormat={}{0:F2}}" FontFamily="Consolas" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnFullScreen" Click="btnFullScreen_Click" Content="全屏/恢复" HorizontalAlignment="Right" />
+        </StackPanel>
+        <ScrollViewer x:Name="scrStage" HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CanContentScroll="True"
+                  MouseDown="scrStage_MouseDown" ScrollChanged="scrStage_ScrollChanged">
+            <Grid Name="grdStage" Width="{Binding Path=ScreenSize.X}" Height="{Binding Path=ScreenSize.Y}" RenderTransformOrigin="0.5,0.5"
+                  MouseWheel="grdStage_MouseWheel">
+                <Grid.RenderTransform>
+                    <ScaleTransform ScaleX="{Binding StageSizeTime}" ScaleY="{Binding StageSizeTime}"/>
+                </Grid.RenderTransform>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <UserControl Grid.Column="0" Grid.Row="0" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="1" Grid.Row="0" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="2" Grid.Row="0" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="0" Grid.Row="1" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="2" Grid.Row="1" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="0" Grid.Row="2" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="1" Grid.Row="2" Background="{StaticResource clrWild}"/>
+                <UserControl Grid.Column="2" Grid.Row="2" Background="{StaticResource clrWild}"/>
+                <Canvas x:Name="cvsWorld" Grid.Column="1" Grid.Row="1" Background="White"></Canvas>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</components:ComponentsTrunk>
